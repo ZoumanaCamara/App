@@ -1,0 +1,45 @@
+{% extends "heritage.html.twig" %}
+
+{% block title %}
+    Utilisateurs
+            
+        
+    
+{% endblock %}
+
+{% block pageTitle %}
+    La liste des Utilisateurs
+            
+        
+    
+{% endblock %}
+
+{% block body %}
+<div class="row text-center">
+    {% for personne in personnes %}
+        <div class="card m-3" style="width:18rem">
+            <div class="card-body">
+                <div class="card-title">
+                    Mr 
+                    {{ personne.nom }}
+                    . 
+                </div>
+                <h6>
+                    {{ personne.prenom }}
+                    {{ personne.prenom }}
+                </h6>
+                <p>
+                    Age : 
+                    {{ personne.age }}
+                    ans.
+                </p>
+                <a href="{{ path('find.list', {id: personne.id}) }}" class="card-link text-decoration-none"><i class="fas fa-info"></i>&nbsp;</a>
+                <a href="{{ path('personne.edit', {id: personne.id}) }}" class="card-link text-decoration-none"><i class="fas fa-edit"></i>&nbsp;</a>
+                <a href="{{ path('personne.delete', {id: personne.id}) }}" class="card-link text-decoration-none"><i class="fas fa-trash"></i>&nbsp;</a>
+            </div>
+        </div>
+        
+    {% endfor %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "heritage.html.twig" %}
+
+
+{% block title %}
+    Details
+{% endblock %}
+
+{% block pageTitle %}
+    Details d'un Utilisateur 
+{% endblock %}
+
+{% block body %}
+    <div class="alert alert-success">
+        Bienvenue 
+        {{ personne.prenom }}
+        {{ personne.nom }}
+        , Vous avez 
+        {{ personne.age }}
+        ans.
+    </div>
+{% endblock %}
+
